@@ -14,8 +14,6 @@ This project includes two main scripts, app.py and upload_papers.py, which work 
 ```
 ## Prerequisites
 - Python 3.x
-- mysql-connector-python library
-- PyMuPDF (fitz) library
 
 Install the required libraries using:
 ```
