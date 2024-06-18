@@ -5,6 +5,7 @@ This script extracts metadata from PDF files of research papers and inserts the 
 - Python 3.x
 - mysql-connector-python library
 - PyMuPDF (fitz) library
+```pip install -r requirements.txt```
 
 ```
 CREATE TABLE papers (
