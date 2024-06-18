@@ -81,7 +81,7 @@
                         data.forEach(item => {
                             const resultItem = document.createElement('div');
                             resultItem.classList.add('result-item');
-                            resultItem.innerHTML = `<h3>${item[0]}</h3><p>File Name: ${item[1]}</p>`;
+                            resultItem.innerHTML = `<h3>${item[0]}</h3><p><strong>Author:</strong> ${item[1]}</p><p><strong>Keywords:</strong> ${item[2]}</p><p><strong>File Name:</strong> ${item[3]}</p>`;
                             resultsDiv.appendChild(resultItem);
                         });
                     } else {

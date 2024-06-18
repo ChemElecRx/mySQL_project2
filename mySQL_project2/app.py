@@ -10,7 +10,7 @@ mysql_password = os.getenv("MYSQL_PASSWORD")
 
 # Database connection
 def get_db_connection():
-    return pymysql.connect(user='root', password=mysql_password, host='localhost', database='research_papers_2')
+    return pymysql.connect(user='root', password=mysql_password, host='localhost', database='research_papers_db')
 
 @app.route('/')
 def index():
@@ -22,7 +22,7 @@ def search():
     connection = get_db_connection()
     try:
         with connection.cursor() as cursor:
-            sql = "SELECT title, file_name FROM papers WHERE title LIKE %s OR keywords LIKE %s"
+            sql = "SELECT title, authors, keywords, file_name FROM papers WHERE title LIKE %s OR keywords LIKE %s"
             cursor.execute(sql, ('%' + query + '%', '%' + query + '%'))
             results = cursor.fetchall()
     finally:

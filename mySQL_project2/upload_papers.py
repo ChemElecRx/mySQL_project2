@@ -6,14 +6,18 @@ import fitz  # PyMuPDF
 mysql_password = os.getenv("MYSQL_PASSWORD")
 
 # Database connection
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password=mysql_password,
-    database="research_papers_2"
-)
-
-cursor = db.cursor()
+try:
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=mysql_password,
+        database="research_papers_db"
+    )
+    cursor = db.cursor()
+    print("Database connection successful")
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+    exit(1)
 
 # Directory containing the research papers
 papers_dir = "./ai_papers"
@@ -36,12 +40,12 @@ def extract_metadata(file_path):
         # Normalize the dictionary keys to lowercase
         metadata_normalized = {k.lower(): v for k, v in metadata.items()}
 
-        title = metadata.get("title", "Unknown Title")
-        authors = metadata.get("author", "Unknown Authors")
-        keywords = metadata.get("keywords", "Unknown Keywords")
+        title = metadata_normalized.get("title", "Unknown Title")
+        authors = metadata_normalized.get("author", "Unknown Authors")
+        keywords = metadata_normalized.get("keywords", "Unknown Keywords")
         
         # Extracting publication date in a standard format
-        raw_publication_date = metadata.get("creationDate", "1900-01-01")
+        raw_publication_date = metadata_normalized.get("creationdate", "D:19000101000000")
         publication_date = raw_publication_date.split('D:')[1][:8]  # Extracting 'YYYYMMDD' from 'D:20190327235443-07'00''
         
         # Format the publication_date as 'YYYY-MM-DD'
@@ -74,6 +78,7 @@ for file_name in os.listdir(papers_dir):
         try:
             cursor.execute(sql, val)
             db.commit()
+            print(f"Inserted {file_name} successfully")
         except mysql.connector.Error as err:
             error_message = f"Error inserting file '{file_name}' into database: {err}"
             log_error(error_message)
@@ -82,3 +87,4 @@ for file_name in os.listdir(papers_dir):
 
 cursor.close()
 db.close()
+
