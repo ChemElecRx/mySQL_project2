@@ -1,6 +1,7 @@
 # mySQL_project2
 This project includes two main scripts, app.py and upload_papers.py, which work together to extract metadata from PDF files of research papers and insert the extracted information into a MySQL database. The PyMuPDF library is used for PDF metadata extraction, and the mysql-connector-python library is used for MySQL database operations. Additionally, a simple web interface is provided in the templates folder for searching the database.
-##Porject Structure
+
+## Porject Structure
 ```
 .
 ├── ai_papers/               # Directory containing PDF files
