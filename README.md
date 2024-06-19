@@ -5,11 +5,13 @@ This project involves extracting metadata from PDF files containing research pap
 ```
 .
 ├── ai_papers/               # Directory containing PDF files
-├── templates/               
-│   └── index.html           # HTML template for the search page
-├── app.py                   
+├── app.py
 ├── requirements.txt         # List of Python dependencies
 ├── schema.sql               # SQL schema for setting up the MySQL database
+├── scripts
+│   └── cleanup.sh
+├── templates
+│   └── index.html           # HTML template for the search page
 └── upload_papers.py
 ```
 ## Prerequisites
@@ -17,13 +19,23 @@ This project involves extracting metadata from PDF files containing research pap
 
 Install the required libraries using:
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 Set up the MySQL database schema using:
 ```
 mysql -u root -p < schema.sql
 ```
+## Setup Instructions
 
+1. Set the executable permission for the cleanup script:
+    ```bash
+    chmod +x cleanup.sh
+    ```
+
+2. Run the cleanup script:
+    ```bash
+    ./cleanup.sh
+    ```
 
 ## Modules and Libraries
 * mysql.connector: To connect and interact with the MySQL database.
