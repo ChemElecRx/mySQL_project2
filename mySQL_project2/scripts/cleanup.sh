@@ -1,3 +1,3 @@
 #!/bin/bash
-find ../ai_papers -name '._*.pdf' -type f -delete
+find .. -name '._*' -type f -delete
 
