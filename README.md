@@ -8,8 +8,8 @@ This project involves extracting metadata from PDF files containing research pap
 ├── app.py
 ├── requirements.txt         # List of Python dependencies
 ├── schema.sql               # SQL schema for setting up the MySQL database
-├── scripts
-│   └── cleanup.sh
+├── utils
+│   └── rename_files.py
 ├── templates
 │   └── index.html           # HTML template for the search page
 └── upload_papers.py
