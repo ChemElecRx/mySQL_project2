@@ -16,24 +16,59 @@ This project involves extracting metadata from PDF files containing research pap
 ```
 ## Prerequisites
 - Python 3.x
+- MySQL
 
+## Python Environment Setup
+Create a virtual environment:
+```
+python3 -m venv env
+```
+Activate the virtual environment:
+
+- On macOS and Linux:
+```
+source env/bin/activate
+```
+- On Windows:
+```
+.\env\Scripts\activate
+```
 Install the required libraries using:
 ```
 pip3 install -r requirements.txt
+```
+Deactivate the virtual environment after use:
+```
+deactivate
+```
+## MySQL Database Setup
+Start MySQL (macOS using Homebrew):
+```
+brew services start mysql
 ```
 Set up the MySQL database schema using:
 ```
 mysql -u root -p < schema.sql
 ```
-## Setup Instructions
+Stop MySQL (macOS using Homebrew):
+```
+brew services stop mysql
+```
+## Running the Application
+```
+python3 upload_papers.py
+python3 app.py
+```
+Open your web browser and navigate to the specified URL to use the web interface for searching through the stored metadata.
+## Cleanup Script
 
 1. Set the executable permission for the cleanup script:
-    ```bash
+    ```
     chmod +x cleanup.sh
     ```
 
 2. Run the cleanup script:
-    ```bash
+    ```
     ./cleanup.sh
     ```
 
