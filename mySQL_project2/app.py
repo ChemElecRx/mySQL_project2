@@ -30,4 +30,6 @@ def search():
     return jsonify(results)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Find the ip address of system using ifconfig command
+    # Replace the host ip in code with your ip
+    app.run(host='192.168.0.16', port=5000, debug=True, threaded=False)
