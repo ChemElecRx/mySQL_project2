@@ -32,4 +32,4 @@ def search():
 if __name__ == '__main__':
     # Find the ip address of system using ifconfig command
     # Replace the host ip in code with your ip
-    app.run(host='192.168.0.16', port=5000, debug=True, threaded=False)
+    app.run(host='127.0.0.1', port=5000, debug=True, threaded=False)
