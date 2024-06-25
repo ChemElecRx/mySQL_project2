@@ -1,7 +1,7 @@
 # mySQL_project2
 This project involves extracting metadata from PDF files containing research papers and storing this metadata in a MySQL database. Additionally, it includes a simple web interface for searching through the stored metadata.
 
-## Porject Structure
+## Project Structure
 ```
 .
 ├── ai_papers/               # Directory containing PDF files
@@ -17,6 +17,10 @@ This project involves extracting metadata from PDF files containing research pap
 ## Prerequisites
 - Python 3.x
 - MySQL
+
+Python is necessary for this project because it provides powerful libraries and tools that facilitate the extraction and processing of metadata from PDF files. Additionally, Python's extensive ecosystem includes packages such as PyMuPDF (used for PDF manipulation) and mysql.connector (used for database interactions), which are essential for efficiently handling the tasks outlined in this project. MySQL, on the other hand, is required for storing and managing the extracted metadata. Its robustness, scalability, and support for structured query language (SQL) make it a suitable choice for this kind of project, where efficient querying and reliable data storage are crucial.
+
+Setting up Python and MySQL before running the application ensures that the environment is correctly configured to handle the project's requirements. By installing the necessary Python libraries and setting up the MySQL database schema in advance, you minimize the risk of encountering runtime errors related to missing dependencies or incorrect database configurations. This preparatory step ensures that when you run the application scripts (upload_papers.py and app.py), they can seamlessly interact with the database and process the PDF files as intended, providing a smoother and more efficient development and usage experience.
 
 ## Python Environment Setup
 Create a virtual environment:
