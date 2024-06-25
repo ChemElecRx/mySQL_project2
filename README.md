@@ -80,6 +80,10 @@ Open your web browser and navigate to the specified URL to use the web interface
 * mysql.connector: To connect and interact with the MySQL database.
 * os: For file and environment variable handling.
 * fitz (PyMuPDF): To extract metadata from PDF files.
+* Flask: To create the web interface for searching through the metadata.
+* pymysql: To connect and interact with the MySQL database.
+* pymysql.cursors.DictCursor: To fetch database results as dictionaries.
+* Flask's request, render_template, and jsonify: For handling web requests, rendering HTML templates, and returning JSON responses.
 
 ## Database Connection
 Connects to the MySQL database using the mysql.connector.connect() function, with the password retrieved from the environment variable MYSQL_PASSWORD.
