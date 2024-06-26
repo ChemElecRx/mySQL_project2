@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, send_from_directory
 import pymysql
 from pymysql.cursors import DictCursor
 import os
@@ -29,7 +29,12 @@ def search():
         connection.close()
     return jsonify(results)
 
+@app.route('/ai_papers/<path:filename>')
+def pdf(filename):
+    return send_from_directory('ai_papers', filename)
+
 if __name__ == '__main__':
     # Find the ip address of system using ifconfig command
     # Replace the host ip in code with your ip
     app.run(host='127.0.0.1', port=5000, debug=True, threaded=False)
+    # 127.0.0.1
