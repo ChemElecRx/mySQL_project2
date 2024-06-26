@@ -1,5 +1,5 @@
 # mySQL_project2
-This project involves extracting metadata from PDF files containing research papers and storing this metadata in a MySQL database. Additionally, it includes a simple web interface for searching through the stored metadata.
+This project involves extracting metadata from PDF files containing research papers and storing this metadata in a MySQL database. Additionally, it includes a simple web interface for searching through the stored metadata and viewing the papers in PDF format.
 
 ## Project Structure
 ```
@@ -59,8 +59,12 @@ Stop MySQL (macOS using Homebrew):
 brew services stop mysql
 ```
 ## Running the Application
+1. **Upload Papers:** Run the script to upload PDF papers and extract metadata:
 ```
 python3 upload_papers.py
+```
+2. **Run the Web Interface:** Start the Flask web server to run the search interface:
+```
 python3 app.py
 ```
 Open your web browser and navigate to the specified URL to use the web interface for searching through the stored metadata.
@@ -75,7 +79,10 @@ Open your web browser and navigate to the specified URL to use the web interface
     ```
     ./cleanup.sh
     ```
-
+## Feature: Viewing PDFs
+- When viewing search results on the web interface, clicking on a paper's title will open the corresponding PDF file in a new tab.
+- The PDF files are stored in the ai_papers directory within the project structure.
+- Flask's send_from_directory function is used to serve PDF files securely from the server to the browser.
 ## Modules and Libraries
 * mysql.connector: To connect and interact with the MySQL database.
 * os: For file and environment variable handling.
