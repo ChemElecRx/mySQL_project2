@@ -58,16 +58,6 @@ Stop MySQL (macOS using Homebrew):
 ```
 brew services stop mysql
 ```
-## Running the Application
-1. **Upload Papers:** Run the script to upload PDF papers and extract metadata:
-```
-python3 upload_papers.py
-```
-2. **Run the Web Interface:** Start the Flask web server to run the search interface:
-```
-python3 app.py
-```
-Open your web browser and navigate to the specified URL to use the web interface for searching through the stored metadata.
 ## Cleanup Script
 
 1. Set the executable permission for the cleanup script:
@@ -79,6 +69,17 @@ Open your web browser and navigate to the specified URL to use the web interface
     ```
     ./cleanup.sh
     ```
+## Running the Application
+1. **Upload Papers:** Run the script to upload PDF papers and extract metadata:
+```
+python3 upload_papers.py
+```
+2. **Run the Web Interface:** Start the Flask web server to run the search interface:
+```
+python3 app.py
+```
+Open your web browser and navigate to the specified URL to use the web interface for searching through the stored metadata.
+
 ## Feature: Viewing PDFs
 - When viewing search results on the web interface, clicking on a paper's title will open the corresponding PDF file in a new tab.
 - The PDF files are stored in the ai_papers directory within the project structure.
