@@ -37,4 +37,5 @@ if __name__ == '__main__':
     # Find the ip address of system using ifconfig command
     # Replace the host ip in code with your ip
     app.run(host='127.0.0.1', port=5000, debug=True, threaded=False)
-    # 127.0.0.1
+    # pip3 install gunicorn
+    # gunicorn -w 4 -b 127.0.0.1:5000 app:app
