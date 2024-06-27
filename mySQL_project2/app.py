@@ -33,9 +33,10 @@ def search():
 def pdf(filename):
     return send_from_directory('ai_papers', filename)
 
-if __name__ == '__main__':
+if __name__ == '__main__': # Commented out or removed for Gunicorn
     # Find the ip address of system using ifconfig command
     # Replace the host ip in code with your ip
     app.run(host='127.0.0.1', port=5000, debug=True, threaded=False) # Commented out or removed for Gunicorn
     # pip3 install gunicorn
     # gunicorn -w 4 -b 127.0.0.1:5000 app:app
+    # gunicorn -w 4 -b 127.0.0.1:5000 --access-logfile access.log app:app
